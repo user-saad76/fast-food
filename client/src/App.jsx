@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import './App.css'
-import Navbar from './components/Navbar'
-import BannerCarousel from './components/BannerCarousel'
-import OrderDetails from './components/OrderDetails'
-import Deal from './components/Deal'
-import BranchesLocation from './components/BranchesLocation'
-import RestaurantManagement from './components/RestaurantManagement'
- import Footer from './components/Footer'
+import { BrowserRouter ,Routes,Route } from "react-router";
+import Home from './Pages/Home'
+import About from './Pages/About'
+import Navbar from './components/Navbar';
+import Cart from './Pages/Cart';
+import SignIn from './Pages/SignIn';
+import SignUp from './Pages/SignUp';
 
 
 function App() {
@@ -14,13 +14,18 @@ function App() {
 
   return (
     <>
-      <Navbar/>
-      <BannerCarousel/>
-      <OrderDetails/>
-      <Deal/>
-      <BranchesLocation/>
-      <RestaurantManagement/>
-       <Footer/>
+   <BrowserRouter>
+    <Navbar/>
+   <Routes>
+     <Route path='/home' element ={<Home/>}/>
+      <Route path='/about' element ={<About/>}/>
+       <Route path='/order' element ={<Cart/>}/>
+       <Route path='/SignIn' element ={<SignIn/>}/>
+         <Route path='/SignUp' element ={<SignUp/>}/>
+   </Routes>
+ 
+  </BrowserRouter>
+     
      
     </>
   )

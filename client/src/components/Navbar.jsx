@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 const Navbar = () => {
   return (
@@ -29,9 +30,9 @@ const Navbar = () => {
     <div className="collapse navbar-collapse" id="navbarMenu">
       <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">
+          <Link className="nav-link active" aria-current="page" to ="/home">
             Home
-          </a>
+          </Link>
         </li>
 
         <li className="nav-item">
@@ -89,22 +90,22 @@ const Navbar = () => {
           </a>
           <ul className="dropdown-menu" aria-labelledby="accountDropdown">
             <li>
-              <a className="dropdown-item" href="#">
+              <Link className="dropdown-item" to ="/SignIn">
                 Sign In
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="dropdown-item" href="#">
-                Sign Out
-              </a>
+              <Link className="dropdown-item" to ="/SignUp">
+                Sign Up
+              </Link>
             </li>
           </ul>
         </li>
 
         <li className="nav-item">
-          <a className="nav-link" href="#">
+          <Link className="nav-link" to="/about">
             About Us
-          </a>
+          </Link>
         </li>
 
         <li className="nav-item">
@@ -115,9 +116,9 @@ const Navbar = () => {
       </ul>
 
       {/* Order Now Button (Right Side) */}
-      <a href="#" className="btn btn-light fw-bold">
+      <Link to ="/order" className="btn btn-light fw-bold">
         Order 0
-      </a>
+      </Link>
     </div>
   </div>
 </nav>
